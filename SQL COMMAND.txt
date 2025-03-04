@@ -1,0 +1,49 @@
+CREATE DATABASE my_database;
+USE my_database;
+
+-- Create table for storing personal information
+CREATE TABLE personal_info (
+    personal_id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL
+);
+
+-- Create table for storing shop information
+CREATE TABLE shop_info (
+    shop_id INT AUTO_INCREMENT PRIMARY KEY,
+    shop_name VARCHAR(255) NOT NULL,
+    shop_address VARCHAR(255) NOT NULL,
+    shop_phone_number VARCHAR(20) NOT NULL,
+    shop_email VARCHAR(255),
+    personal_id INT,
+    FOREIGN KEY (personal_id) REFERENCES personal_info(personal_id) ON DELETE CASCADE
+);
+
+-- Create table for storing business financial details
+CREATE TABLE business_info (
+    business_id INT AUTO_INCREMENT PRIMARY KEY,
+    business_registration_number VARCHAR(255) NOT NULL,
+    tin VARCHAR(255) NOT NULL,
+    vat_gst_number VARCHAR(255),
+    annual_revenue VARCHAR(255),
+    personal_id INT,
+    FOREIGN KEY (personal_id) REFERENCES personal_info(personal_id) ON DELETE CASCADE
+);
+
+-- Create table for storing banking information
+CREATE TABLE bank_info (
+    bank_id INT AUTO_INCREMENT PRIMARY KEY,
+    account_name VARCHAR(255) NOT NULL,
+    account_number VARCHAR(255) NOT NULL,
+    bank_name VARCHAR(255) NOT NULL,
+    ifsc_code VARCHAR(255) NOT NULL,
+    personal_id INT,
+    FOREIGN KEY (personal_id) REFERENCES personal_info(personal_id) ON DELETE CASCADE
+);
+
+
+ALTER TABLE personal_info
+ADD COLUMN reset_token VARCHAR(255) DEFAULT NULL,
+ADD COLUMN token_expiry DATETIME DEFAULT NULL;

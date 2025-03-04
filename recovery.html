@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Password Recovery</title>
+    <link rel="stylesheet" href="css/recovery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="pos-pay-logo.jpeg" alt="Company Logo" class="company-logo">
+            </div>
+            <div class="form">
+                <form id="recoveryForm" method="post" action="recovery.php">
+                    <label for="email">Email</label>
+                    <div class="inputBx">
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="inputBx">
+                        <button type="submit">Recover Password</button>
+                    </div>
+                </form>
+                <p>Remember your password? <a href="login.html">Login</a></p>
+                <p>Don't have an account? <a href="index.html">Register</a></p>
+            </div>
+            <div class="powered-by">
+                <p>Powered by</p>
+                <img src="logo-transparent.png" alt="Powered by Logo" class="powered-by-logo">
+            </div>
+        </div>
+        <div class="background-image">
+            <img src="login_bg.png" alt="Background Image">
+        </div>
+    </div>
+</body>
+</html>

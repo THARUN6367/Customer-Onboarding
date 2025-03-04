@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="fullName"></span>!</h1>
+        <div class="details">
+            <h2>Your Details:</h2>
+            <p><strong>Full Name:</strong> <span id="fullName"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Phone Number:</strong> <span id="phoneNumber"></span></p>
+            <p><strong>Shop Name:</strong> <span id="shopName"></span></p>
+            <p><strong>Shop Address:</strong> <span id="shopAddress"></span></p>
+            <p><strong>Shop Phone Number:</strong> <span id="shopPhoneNumber"></span></p>
+            <p><strong>Shop Email:</strong> <span id="shopEmail"></span></p>
+            <p><strong>Business Registration Number:</strong> <span id="businessRegistrationNumber"></span></p>
+            <p><strong>TIN:</strong> <span id="tin"></span></p>
+            <p><strong>VAT/GST Number:</strong> <span id="vatGstNumber"></span></p>
+            <p><strong>Annual Revenue:</strong> <span id="annualRevenue"></span></p>
+            <p><strong>Account Name:</strong> <span id="accountName"></span></p>
+            <p><strong>Account Number:</strong> <span id="accountNumber"></span></p>
+            <p><strong>Bank Name:</strong> <span id="bankName"></span></p>
+            <p><strong>IFSC Code:</strong> <span id="ifscCode"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("fetch_user_details.php")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("fullName").innerText = data.full_name;
+                    document.getElementById("email").innerText = data.email;
+                    document.getElementById("phoneNumber").innerText = data.phone_number;
+                    document.getElementById("shopName").innerText = data.shop_name;
+                    document.getElementById("shopAddress").innerText = data.shop_address;
+                    document.getElementById("shopPhoneNumber").innerText = data.shop_phone_number;
+                    document.getElementById("shopEmail").innerText = data.shop_email;
+                    document.getElementById("businessRegistrationNumber").innerText = data.business_registration_number;
+                    document.getElementById("tin").innerText = data.tin;
+                    document.getElementById("vatGstNumber").innerText = data.vat_gst_number;
+                    document.getElementById("annualRevenue").innerText = data.annual_revenue;
+                    document.getElementById("accountName").innerText = data.account_name;
+                    document.getElementById("accountNumber").innerText = data.account_number;
+                    document.getElementById("bankName").innerText = data.bank_name;
+                    document.getElementById("ifscCode").innerText = data.ifsc_code;
+                })
+                .catch(error => console.error('Error fetching user details:', error));
+        });
+    </script>
+</body>
+</html>

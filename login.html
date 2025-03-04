@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="pos-pay-logo.jpeg" alt="Company Logo" class="company-logo">
+            </div>
+            <div class="form">
+                <form id="loginForm" method="post" action="login.php">
+                    <label for="email">Email</label>
+                    <div class="inputBx">
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="inputBx">
+                        <input type="password" id="password" name="password" required>
+                        <span class="eye" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </span>
+                    </div><br>
+                    <div class="inputBx">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+                <p>Don't have an account? <a href="index.html">Register</a></p>
+                <p>Forgot your password? <a href="recovery.html">Password Recovery</a></p>
+            </div>
+            <div class="powered-by">
+                <p>Powered by</p>
+                <img src="logo-transparent.png" alt="Powered by Logo" class="powered-by-logo">
+            </div>
+        </div>
+        <div class="background-image">
+            <img src="login_bg.png" alt="Background Image">
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            var eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>
