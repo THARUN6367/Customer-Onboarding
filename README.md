@@ -79,8 +79,5 @@ The **Customer Onboarding System** is a web-based application designed to simpli
 3. Commit your changes.
 4. Push to the branch and open a pull request.
 
-## License
-This project is licensed under the **MIT License**.
-
 ## Contact
 For queries or contributions, reach out via [tharun6367@gmail.com](mailto:tharun6367@gmail.com).
